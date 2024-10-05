@@ -8,7 +8,7 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(45deg, green, blue);
+    
 }
 section {
     padding: 54px 0;
@@ -44,4 +44,38 @@ nav ul li a{
     color: white;
     font-size: 25px;
     margin-left: 20px;
+}
+
+
+.btn{
+    background-color: rgb(37, 6, 63);
+    padding: 5px 5px;
+    border-radius: 8px;
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+}
+.banner-text{
+    margin: 150px;
+    text-align: center;
+    padding: 0 90px;
+}
+.banner-text h1{
+    font-size: 96px;
+    color: white;
+}
+.banner-text p {
+    font-size: 20px;
+    color: white;
+    font-weight: lighter;
+    margin: 18px 0;
+}
+.dif-ser h3{
+    text-align: center;
+}
+.dif-ser p{
+    margin-bottom: 28px;
+    text-align: center;
 }
