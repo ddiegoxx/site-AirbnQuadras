@@ -5,15 +5,13 @@
     list-style: none;
     text-decoration: none;
 }
-
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(45deg, green, blue);
+    background-image: linear-gradient(45deg, rgb(255, 238, 0),rgb(85, 4, 85));
 }
 section {
     padding: 54px 0;
 }
-
 header{
     background-position: center;
     background-size: cover;
@@ -22,7 +20,6 @@ header{
 nav{
     height: 8%;
     background-color: rgba(0, 0, 0, 1);
-
 }
 nav a{
     margin-left: 5%;
@@ -30,7 +27,6 @@ nav a{
     font-size: 35px;
     color: white;
     line-height: 8vh;
-    
 }
 ul{
     float: right;
@@ -44,7 +40,6 @@ nav ul li a{
     font-size: 25px;
     margin-left: 20px;
 }
-
 .banner{
     display: flex;
     justify-content: center;
@@ -57,23 +52,17 @@ nav ul li a{
 }
 .banner-text h1{
     font-size: 96px;
-    color: white;
+    color: black;
 }
 .banner-text p {
     font-size: 20px;
-    color: white;
+    color: black;
     font-weight: lighter;
     margin: 18px 0;
 }
-.dif-ser h3{
+.dif-serv h2{
     text-align: center;
-}
-.dif-ser p{
-    margin-bottom: 28px;
-    text-align: center;
-}
-.dif-serv h3{
-    text-align: center;
+    font-size: 30px;
 }
 .dif-serv p{
     margin-bottom: 20px;
@@ -83,7 +72,6 @@ nav ul li a{
     display: flex;
     justify-content: center;
 }
-
 .dif-serv .card-item{
     background-color: white;
     margin: 15px;
@@ -92,59 +80,56 @@ nav ul li a{
     width: 350px;
     transition: 0.3s;
 }
-
 .dif-serv .card-item img{
     border-radius: 13px;
+    height: 240;
     width: 350px;
     display: block;
-    
+
 }
 .dif-serv .card-item .nome-user {
+    margin-top: 15px;
     font-weight: 600;
     font-size: 20px;
     margin-bottom: 15px;
-    transition: 0.3s;
 }
 .dif-serv .card-item .paragrafo {
     font-size: 15px;
     padding: 0 15px;
-    transition: 0.3s;
-}
-.dif-serv .card-item .estrelas {
-    margin: 15px 0;
-    border-top: 2px solid #71767a23;
-}
-.dif-serv .card-item .estrelas i {
-    color: #4f9cf9;
-    margin-top: 15px;
-    font-size: 20px;
-    transition: 0.3s;
 }
 .dif-serv .card-item:hover{
     background-color:  #4f9cf9;
     margin-top: -5px;
     color: white;
-
 }
-
-.dif-serv .card-item:hover .estrelas i{
-    color: white;
-}
-
-
 .dif-serv .card-item2{
     background-color: white;
     margin: 15px;
     border-radius: 14px;
     text-align: center;
     width: 350px;
+    transition: 0.3s;
 }
-
 .dif-serv .card-item2 img{
     border-radius: 13px;
-    width: 350px;
-    display: block;
-    
+    max-width: 350px;
+    height: 240px;
+    display: block; 
+}
+.dif-serv .card-item2 .nome-user {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.dif-serv .card-item2 .paragrafo {
+    font-size: 15px;
+    padding: 0 15px;
+}
+.dif-serv .card-item2:hover{
+    background-color:  #4f9cf9;
+    margin-top: -5px;
+    color: white;
 }
 .dif-serv .card-item3{
     background-color: white;
@@ -152,11 +137,70 @@ nav ul li a{
     border-radius: 14px;
     text-align: center;
     width: 350px;
+    transition: 0.3s;
 }
-
 .dif-serv .card-item3 img{
     border-radius: 13px;
     width: 350px;
+    height: 240px;
     display: block;
+}
+.dif-serv .card-item3 .nome-user {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.dif-serv .card-item3 .paragrafo {
+    font-size: 15px;
+    padding: 0 15px;
+}
+.dif-serv .card-item3:hover{
+    background-color:  #4f9cf9;
+    margin-top: -5px;
+    color: white;
+}
+.dif-serv .card-item4{
+    background-color: white;
+    margin: 15px;
+    border-radius: 14px;
+    text-align: center;
+    width: 350px;
+    transition: 0.3s;
+}
+.dif-serv .card-item4 img{
+    border-radius: 13px;
+    width: 350px;
+    height: 230px;
+    display: block;
+}
+.dif-serv .card-item4 .nome-user {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.dif-serv .card-item4 .paragrafo {
+    font-size: 15px;
+    padding: 0 15px;
+}
+.dif-serv .card-item4:hover{
+    background-color:  #4f9cf9;
+    margin-top: -5px;
+    color: white;
+
+}
+.footer{
+    background-color: black;
+    width: 100%;
+    color: white;
+    padding: 1%;
+    text-align: center;
+}
+.footer a{
+    margin-left: 10;
     
+}
+.footer a i{
+    color: white;
 }
