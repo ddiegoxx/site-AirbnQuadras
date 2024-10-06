@@ -8,7 +8,7 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    
+    background-image: linear-gradient(45deg, green, blue);
 }
 section {
     padding: 54px 0;
@@ -19,12 +19,10 @@ header{
     background-size: cover;
     background-attachment: fixed;
 }
-div{
-    width: 100%;
+nav{
     height: 8%;
     background-color: rgba(0, 0, 0, 1);
-    margin: 0 auto;
-    padding: 0 5%;
+
 }
 nav a{
     margin-left: 5%;
@@ -32,6 +30,7 @@ nav a{
     font-size: 35px;
     color: white;
     line-height: 8vh;
+    
 }
 ul{
     float: right;
@@ -46,16 +45,10 @@ nav ul li a{
     margin-left: 20px;
 }
 
-
-.btn{
-    background-color: rgb(37, 6, 63);
-    padding: 5px 5px;
-    border-radius: 8px;
-}
-
 .banner{
     display: flex;
     justify-content: center;
+    
 }
 .banner-text{
     margin: 150px;
@@ -78,4 +71,92 @@ nav ul li a{
 .dif-ser p{
     margin-bottom: 28px;
     text-align: center;
+}
+.dif-serv h3{
+    text-align: center;
+}
+.dif-serv p{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+}
+
+.dif-serv .card-item{
+    background-color: white;
+    margin: 15px;
+    border-radius: 14px;
+    text-align: center;
+    width: 350px;
+    transition: 0.3s;
+}
+
+.dif-serv .card-item img{
+    border-radius: 13px;
+    width: 350px;
+    display: block;
+    
+}
+.dif-serv .card-item .nome-user {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+.dif-serv .card-item .paragrafo {
+    font-size: 15px;
+    padding: 0 15px;
+    transition: 0.3s;
+}
+.dif-serv .card-item .estrelas {
+    margin: 15px 0;
+    border-top: 2px solid #71767a23;
+}
+.dif-serv .card-item .estrelas i {
+    color: #4f9cf9;
+    margin-top: 15px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+.dif-serv .card-item:hover{
+    background-color:  #4f9cf9;
+    margin-top: -5px;
+    color: white;
+
+}
+
+.dif-serv .card-item:hover .estrelas i{
+    color: white;
+}
+
+
+.dif-serv .card-item2{
+    background-color: white;
+    margin: 15px;
+    border-radius: 14px;
+    text-align: center;
+    width: 350px;
+}
+
+.dif-serv .card-item2 img{
+    border-radius: 13px;
+    width: 350px;
+    display: block;
+    
+}
+.dif-serv .card-item3{
+    background-color: white;
+    margin: 15px;
+    border-radius: 14px;
+    text-align: center;
+    width: 350px;
+}
+
+.dif-serv .card-item3 img{
+    border-radius: 13px;
+    width: 350px;
+    display: block;
+    
 }
