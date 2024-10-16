@@ -20,15 +20,17 @@
         </nav>
         
         <div class="login">
-            <h1>Login</h1>
-            <br><br>
-            <input type="text" placeholder="Usuario" >
-            <br><br>
-            <input type="password" placeholder="Senha">
-            <br><br>
-            <li><a href="cadastro.html">Criar conta nova?</a></li>
-            <br>
-            <button>Enviar</button>
+            <form action="form-login">
+                <h1>Login</h1>
+                <br><br>
+                <input type="email" name="email" id="email" placeholder="Usuario" data-min-length="2" data-email-validate>
+                <br><br>
+                <input type="password" name="password" id="password" placeholder="Senha" data-password-validate data-required>
+                <br><br>
+                <li><a href="cadastro.html">Criar conta nova?</a></li>
+                <br>
+                <input type="submit" id="btn-submit" value="Entrar">
+            </form>
         </div>
     </header>
     <footer class="footer">
@@ -47,5 +49,7 @@
             <i class="fa-brands fa-linkedin-in"></i>
         </a>
     </footer>
+    <p class="error-validation template"></p>
+    <script src="js/login.js"></script>
 </body>
 </html>

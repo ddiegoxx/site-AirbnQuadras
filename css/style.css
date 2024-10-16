@@ -55,7 +55,7 @@ div li a{
     color: rgb(149, 41, 250);
 }
 
-button{
+input[type="submit"]{
     background-color: dodgerblue;
     border: none;
     padding: 15px;
@@ -65,9 +65,6 @@ button{
     color: white;
     font-size: 15px;
     border-radius: 15px;
-}
-button:hover{
-    background-color: deepskyblue;
     cursor: pointer;
 }
 
