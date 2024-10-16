@@ -15,14 +15,12 @@
   }
   
   a {
-    color: #E60084;
+    color: #0f00e6;
   }
   
   body {
     padding-top: 5vh;
-    background-image: url('../img/bg-register-page.jpg');
-    background-size: cover;
-    background-position-y: -150px;
+    background-image: linear-gradient(45deg,black, blue);
   }
   
   /* form */
@@ -74,7 +72,7 @@
   }
   
   input:focus {
-    border-color: #E60084;
+    border-color: #000fe6;
   }
   
   input[type="submit"] {
