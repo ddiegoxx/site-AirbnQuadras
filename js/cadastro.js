@@ -151,13 +151,13 @@ class Validator {
   function salvarDados(event) {
     console.log('entrou')
     const email = form.elements["email"].value;
-    const nome = form.elements["nome"].value;
+    const name = form.elements["name"].value;
     const cpf = form.elements["cpf"].value;
     const password = form.elements["password"].value;
     
     const dados = {
       email: email,
-      nome: nome,
+      name: name,
       cpf: cpf,
       password: password,
       usr_type: 2
