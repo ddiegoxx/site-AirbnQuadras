@@ -1,10 +1,10 @@
+const BASE_URL = 'http://3.224.210.59'
 class Validator {
 
     constructor() {
       this.validations = [
         'data-min-length',
         'data-max-length',
-        'data-only-letters',
         'data-email-validate',
         'data-required',
         'data-equal',
@@ -58,19 +58,6 @@ class Validator {
       let errorMessage = `O campo precisa ter menos que ${maxValue} caracteres`;
   
       if(inputLength > maxValue) {
-        this.printMessage(input, errorMessage);
-      }
-  
-    }
-    onlyletters(input) {
-  
-      let re = /^[A-Za-z]+$/;;
-  
-      let inputValue = input.value;
-  
-      let errorMessage = `O campo não aceita números nem caracteres especiais`;
-  
-      if(!re.test(inputValue)) {
         this.printMessage(input, errorMessage);
       }
   
@@ -159,22 +146,25 @@ class Validator {
     e.preventDefault();
   
     validator.validate(form);
+    salvarDados(form)
   });
   function salvarDados(event) {
+    console.log('entrou')
     event.preventDefault();
     const email = document.getElementById("email").value;
     const nome = document.getElementById("nome").value;
-    const lastname = document.getElementById("lastname").value;
+    const cpf = document.getElementById("cpf").value;
     const password = document.getElementById("password").value;
     
     const dados = {
       email: email,
       nome: nome,
-      lastname: lastname,
-      password: password
+      cpf: cpf,
+      password: password,
+      usr_type: 2
     };
     /* falta colocar o http do json*/
-    fetch('', {
+    fetch(BASE_URL + '/user', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/Json'

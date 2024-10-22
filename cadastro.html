@@ -11,7 +11,7 @@
 <body>
   <div class="container">
     <nav>
-      <a href="main.html">AirbnQuadras</a>
+      <a href="index.html">AirbnQuadras</a>
       <ul>
         <li><a href="sobre.html">Sobre</a></li>
         <li><a href="servicos.html">Serviços</a></li>
@@ -21,7 +21,7 @@
   </div>
   <div id="main-container">
     <h1>Cadastre-se para acessar o sistema</h1>
-    <form id="register-form" onsubmit="salvarDados(event)">
+    <form id="register-form">
       <div class="full-box">
         <label for="email">E-mail</label>
         <input type="email" name="email" id="email" placeholder="Digite seu e-mail" data-min-length="2" data-email-validate>
@@ -31,8 +31,8 @@
           <input type="text" name="name" id="name" placeholder="Digite seu nome" data-required data-min-length="3" data-max-length="16">
       </div>
       <div class="half-box">
-          <label for="lastname">Sobrenome</label>
-          <input type="text" name="lastname" id="lastname" placeholder="Digite seu sobrenome" data-required data-only-letters>
+          <label for="cpf">CPF</label>
+          <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" data-required>
       </div>
       <div class="half-box spacing">
         <label for="lastname">Senha</label>
