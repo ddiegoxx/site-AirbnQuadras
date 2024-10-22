@@ -150,11 +150,10 @@ class Validator {
   });
   function salvarDados(event) {
     console.log('entrou')
-    event.preventDefault();
-    const email = document.getElementById("email").value;
-    const nome = document.getElementById("nome").value;
-    const cpf = document.getElementById("cpf").value;
-    const password = document.getElementById("password").value;
+    const email = form.elements["email"].value;
+    const nome = form.elements["nome"].value;
+    const cpf = form.elements["cpf"].value;
+    const password = form.elements["password"].value;
     
     const dados = {
       email: email,
