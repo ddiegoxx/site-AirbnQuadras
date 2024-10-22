@@ -45,10 +45,6 @@ class Validator{
     }
 }
 
-
-
-
-
 let form1 = document.getElementById('form-login');
 let submit = document.getElementById('btn-submit');
 
@@ -60,3 +56,16 @@ submit.addEventListener('click', function(e){
 
     validator.validate(form);
 });
+
+function entrar() {
+    let email = document.querySelector('email').value;
+    let password = document.querySelector('password').value;
+
+    let msgError = document.querySelector('msgError');
+
+    let dados = {
+        email: email,
+        password: password
+    }
+
+}
