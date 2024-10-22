@@ -160,3 +160,34 @@ class Validator {
   
     validator.validate(form);
   });
+  function salvarDados(event) {
+    event.preventDefault();
+    const email = document.getElementById("email").value;
+    const nome = document.getElementById("nome").value;
+    const lastname = document.getElementById("lastname").value;
+    const password = document.getElementById("password").value;
+    
+    const dados = {
+      email: email,
+      nome: nome,
+      lastname: lastname,
+      password: password
+    };
+    /* falta colocar o http do json*/
+    fetch('', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/Json'
+      },
+      body: JSON.stringify(dados)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        alert("Dados enviados com sucesso!");
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert("Erro ao enviar dados.");
+    });
+  }

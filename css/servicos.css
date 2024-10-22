@@ -7,7 +7,7 @@
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(45deg, rgb(12, 7, 27),rgb(85, 4, 85));
+    background-image: linear-gradient(45deg, green, blue);
 }
 section {
     padding: 54px 0;
@@ -100,7 +100,7 @@ nav ul li a{
     padding: 0 15px;
 }
 .dif-serv .card-item:hover{
-    background-color:  #b54ff9;
+    background-color:  #1d1f96;
     margin-top: -5px;
     color: white;
 }
@@ -129,7 +129,7 @@ nav ul li a{
     padding: 0 15px;
 }
 .dif-serv .card-item2:hover{
-    background-color:  #b54ff9;
+    background-color:  #1d1f96;
     margin-top: -5px;
     color: white;
 }
@@ -158,7 +158,7 @@ nav ul li a{
     padding: 0 15px;
 }
 .dif-serv .card-item3:hover{
-    background-color:  #b54ff9;
+    background-color:  #1d1f96;
     margin-top: -5px;
     color: white;
 }
@@ -187,22 +187,24 @@ nav ul li a{
     padding: 0 15px;
 }
 .dif-serv .card-item4:hover{
-    background-color:  #b54ff9;
+    background-color:  #1d1f96;
     margin-top: -5px;
     color: white;
 
 }
-.footer{
+footer{
     background-color: black;
     width: 100%;
     color: white;
     padding: 1%;
     text-align: center;
+    position: relative;
+    bottom: 0;
 }
-.footer a{
+footer a{
     margin-left: 10;
     
 }
-.footer a i{
+footer a i{
     color: white;
 }

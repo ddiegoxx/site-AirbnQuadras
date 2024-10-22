@@ -4,13 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Form de Registro com validações em JS</title>
+  <title>Cadastro</title>
   <link rel="stylesheet" href="css/cadastro.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+  <div class="container">
+    <nav>
+      <a href="main.html">AirbnQuadras</a>
+      <ul>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
   <div id="main-container">
     <h1>Cadastre-se para acessar o sistema</h1>
-    <form id="register-form" action="">
+    <form id="register-form" onsubmit="salvarDados(event)">
       <div class="full-box">
         <label for="email">E-mail</label>
         <input type="email" name="email" id="email" placeholder="Digite seu e-mail" data-min-length="2" data-email-validate>
