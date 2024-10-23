@@ -35,26 +35,25 @@ window.onload =  function() {
         alert("Erro ao carregar dados.");
     })
     .then(data => {
+        console.log(data)
         preencherTabela(data)
     });
 };
 
-function preencherTabela(Product) {
-    const tabela = document.getElementById("tabela-quadras").getElementsByTagName('tbody')[0];
+function preencherTabela(products) {
+    const tabela = document.querySelector(".tabela-quadras tbody");
 
-    Product.forEach(item => {
+    products.forEach(item => {
         let linha = tabela.insertRow();
-        console.log(item)
 
         let celulaName = linha.insertCell(0);
         let celulaDescription = linha.insertCell(1);
         let celulaPrice = linha.insertCell(2);
         let celulaUser = linha.insertCell(3);
 
-        celulaName.innerHTML = item.Name;
-        celulaDescription.innerHTML = item.Description;
-        celulaPrice.innerHTML = item.Price;
-        celulaUser.innerHTML = User_id;
-
-    })
+        celulaName.innerHTML = item['name'];
+        celulaDescription.innerHTML = item['description']; // Corrigido para 'description'
+        celulaPrice.innerHTML = item['price'];
+        celulaUser.innerHTML = item['user_id'];
+    });
 }
