@@ -1,3 +1,4 @@
+const BASE_URL = 'http://3.224.210.59'
 class Validator{
 
     constructor() {
@@ -5,7 +6,6 @@ class Validator{
             'data-min-length',
             'data-email-validate',
             'data-required',
-            'data-password-validate',
         ]
     }
     validate(form) {
@@ -15,7 +15,7 @@ class Validator{
             this.cleanValidations(currentValidations);
         }
 
-        let inputss = form.getElementByIdTagName('input');
+        let inputss = form.getElementsByTagName('input');
 
         let inputsArrays = [...inputss];
 
@@ -34,12 +34,56 @@ class Validator{
             
         }, this);
     }
-    minlength(input, minValue){
-        let inputsLength = input.value.length;
-
-        let errorMenssage = 'O ca'
+    minlength(input, minValue) {
+  
+        let inputLength = input.value.length;
+    
+        let errorMessage = `O campo precisa ter pelo menos ${minValue} caracteres`;
+    
+        if(inputLength < minValue) {
+          this.printMessage(input, errorMessage);
+        }
     }
+    emailvalidate(input) {
+        let re = /\S+@\S+\.\S+/;
+    
+        let email = input.value;
+    
+        let errorMessage = `Insira um e-mail no padrão google@gmail.com`;
+    
+        if(!re.test(email)) {
+          this.printMessage(input, errorMessage);
+        }
+    
+      }
+    required(input) {
+  
+        let inputValue = input.value;
+    
+        if(inputValue === '') {
+          let errorMessage = `Este campo é obrigatório`;
+    
+          this.printMessage(input, errorMessage);
+        }
+    
+      }
 
+    printMessage(input, msg) {
+    
+        let errorsQty = input.parentNode.querySelector('.error-validation');
+    
+        if(errorsQty === null) {
+          let template = document.querySelector('.error-validation').cloneNode(true);
+    
+          template.textContent = msg;
+      
+          let inputParent = input.parentNode;
+      
+          template.classList.remove('template');
+      
+          inputParent.appendChild(template);
+        }
+      }
     cleanValidations(validations) {
         validations.forEach(ele => ele.remove());
     }
@@ -58,9 +102,10 @@ submit.addEventListener('click', function(e){
 
 function entrar(form) {
     let email = form.elements["email"].value;
-    let password = form.elements["passowrd"].value;
+    let password = form.elements["password"].value;
 
-    let msgError = document.querySelector('msgError');
+    let msgError = document.querySelector('#msgError');
+
     let dados = {
         email: email,
         password: password
@@ -70,14 +115,20 @@ function entrar(form) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/Json',
-            'Authorization': 'Bearer '+ localStorage.getItem('token')
         },
         body: JSON.stringify(dados)
       })
-      .then(response => response.json())
-      .then(data => {
-          alert("Login realizado com sucesso!");
-          window.location.href = 'home.html';
+      .then(response => {
+        if(response.status == 200){
+            const token = response.body['access_token']
+            localStorage.setItem('token', token)
+            alert('Login Realizado com sucesso')
+            window.location.href = 'home.html';
+        }else{
+            console.error('Error:', error);
+            alert(`Erro ao logar: ${error}`); 
+        }
+        
       })
       .catch((error) => {
           console.error('Error:', error);
