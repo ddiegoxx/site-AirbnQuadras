@@ -19,10 +19,13 @@ btnExp.addEventListener('click', function(){
 })
 /*funções para mostrar o resultado na tela  */
 window.onload = function() {
+    const token = localStorage.getItem('token')
+   
     fetch(BASE_URL + '/products', {
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer '+token
         }
     })
     .then(response => response.json())
