@@ -18,9 +18,8 @@ btnExp.addEventListener('click', function(){
     menuSide.classList.toggle('expandir')
 })
 /*funções para mostrar o resultado na tela  */
-window.onload = function() {
+window.onload =  function() {
     const token = localStorage.getItem('token')
-   
     fetch(BASE_URL + '/products', {
         method: 'GET',
         headers: {
@@ -28,10 +27,15 @@ window.onload = function() {
             'Authorization': 'Bearer '+token
         }
     })
-    .then(response => response.json())
-    .then(data => {
+    .then(response => {
+        if (response.ok) {
+            return response.json()
+        }
         console.error('Erro ao buscar dados:', error);
         alert("Erro ao carregar dados.");
+    })
+    .then(data => {
+        preencherTabela(data)
     });
 };
 

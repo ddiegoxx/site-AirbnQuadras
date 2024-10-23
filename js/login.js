@@ -118,18 +118,21 @@ function entrar(form) {
         },
         body: JSON.stringify(dados)
       })
-      .then(response => {
+      .then( response => {
         if(response.status == 200){
-            const token = response.body['access_token']
-            localStorage.setItem('token', token)
-            alert('Login Realizado com sucesso')
-            window.location.href = 'home.html';
+            return response.json()
         }else{
             console.error('Error:', error);
             alert(`Erro ao logar: ${error}`); 
         }
         
       })
+      .then(data => {
+        const token = data['access_token']
+            localStorage.setItem('token', token)
+            alert('Login Realizado com sucesso')
+            window.location.href = 'home.html';
+    })
       .catch((error) => {
           console.error('Error:', error);
           alert(`Erro ao logar: ${error}`);
