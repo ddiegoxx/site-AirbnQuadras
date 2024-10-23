@@ -57,3 +57,9 @@ function preencherTabela(products) {
         celulaUser.innerHTML = item['user_id'];
     });
 }
+
+function logout() {
+    localStorage.removeItem('token')
+    alert('Logout realizado')
+    window.location.href = 'index.html';
+}

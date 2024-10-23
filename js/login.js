@@ -122,20 +122,31 @@ function entrar(form) {
         if(response.status == 200){
             return response.json()
         }else{
-            console.error('Error:', error);
-            alert(`Erro ao logar: ${error}`); 
+            console.error(`Error: ${response.body}`);
+            alert(`Erro ao logar: ${response.body}`); 
         }
         
       })
       .then(data => {
         const token = data['access_token']
             localStorage.setItem('token', token)
-            alert('Login Realizado com sucesso')
+            showNotification('Login Realizado');
             window.location.href = 'home.html';
     })
       .catch((error) => {
           console.error('Error:', error);
-          alert(`Erro ao logar: ${error}`);
+          alert(`Erro ao logar: `);
       });
 
+}
+
+function showNotification(message) {
+  const notification = document.getElementById('notification');
+  notification.innerHTML = message;
+  notification.style.display = 'block';
+
+  // Esconde a notificação após 3 segundos
+  setTimeout(() => {
+      notification.style.display = 'none';
+  }, 3000);
 }
