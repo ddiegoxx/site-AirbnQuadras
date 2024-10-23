@@ -45,27 +45,43 @@ class Validator{
     }
 }
 
-let form1 = document.getElementById('form-login');
+let form = document.getElementById('form-login');
 let submit = document.getElementById('btn-submit');
 
 let validator = new Validator();
 
 submit.addEventListener('click', function(e){
-
     e.preventDefault();
-
     validator.validate(form);
+    entrar(form)
 });
 
-function entrar() {
-    let email = document.querySelector('email').value;
-    let password = document.querySelector('password').value;
+function entrar(form) {
+    let email = form.elements["email"].value;
+    let password = form.elements["passowrd"].value;
 
     let msgError = document.querySelector('msgError');
-
     let dados = {
         email: email,
         password: password
     }
+
+    fetch(BASE_URL + '/user/auth', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/Json',
+            'Authorization': 'Bearer '+ localStorage.getItem('token')
+        },
+        body: JSON.stringify(dados)
+      })
+      .then(response => response.json())
+      .then(data => {
+          alert("Login realizado com sucesso!");
+          window.location.href = 'home.html';
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+          alert(`Erro ao logar: ${error}`);
+      });
 
 }

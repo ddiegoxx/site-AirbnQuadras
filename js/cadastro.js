@@ -172,8 +172,8 @@ class Validator {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Success:', data);
-        alert("Dados enviados com sucesso!");
+        alert("Cadastro criado com sucesso!");
+        window.location.href = 'index.html';
     })
     .catch((error) => {
         console.error('Error:', error);
